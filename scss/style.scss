@@ -1,0 +1,210 @@
+@use '../scss' as *;
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  font-family: $spartan;
+  font-size: 15px;
+  background-repeat: no-repeat, no-repeat;
+  background-attachment: fixed, fixed;
+  background-position: 0% 0%, 100% 100%;
+
+  @include onDesktop {
+    background-image:
+      url('/assets/img/bg-pattern-top-desktop.svg'),
+      url('/assets/img/bg-pattern-bottom-desktop.svg');
+  }
+
+  @include onMobile {
+    background-image:
+      url('/assets/img/bg-pattern-top-mobile.svg'),
+      url('/assets/img/bg-pattern-bottom-mobile.svg');
+  }
+}
+
+.top {
+  @include onDesktop {
+    display: flex;
+  }
+}
+
+.section {
+  @include onDesktop {
+    margin: 6.5rem 10rem;
+  }
+
+  @include onMobile {
+    margin: 6.5rem 1.5rem;
+    text-align: center;
+  }
+
+  &__intro {
+    @include onDesktop {
+      width: 50%;
+    }
+
+    &-title {
+      color: $very-dark-magenta;
+      font-weight: $bold;
+      margin-bottom: 2rem;
+
+      @include onDesktop {
+        width: 70%;
+        font-size: 3.5rem;
+      }
+
+      @include onMobile {
+        font-size: 2.5rem;
+      }
+
+    }
+
+    &-description {
+      color: $dark-grayish-magenta;
+      font-weight: $med;
+      line-height: 1.5rem;
+
+      @include onDesktop {
+        font-size: 1.2rem;
+        width: 85%;
+        margin-bottom: 5rem;
+      }
+
+      @include onMobile {
+        font-size: 1.09rem;
+        margin-bottom: 2.5rem;
+      }
+    }
+
+
+  }
+
+  &__rates {
+    @include onDesktop {
+      width: 50%;
+
+      .two {
+        margin-left: 3rem;
+      }
+
+      .three {
+        margin-left: 6rem;
+      }
+
+      padding-top: 2rem;
+    }
+
+    @include onMobile {
+      margin-bottom: 3rem;
+    }
+
+    &-source {
+      background-color: $light-grayish-magenta;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+
+      @include onDesktop {
+        display: flex;
+        width: 450px;
+      }
+
+      &_stars-box {
+        @include onDesktop {
+          margin: 0 1rem;
+        }
+
+        @include onMobile {
+          margin-bottom: 0.5rem;
+        }
+      }
+
+      &_giver {
+        @include onDesktop {
+          margin-left: 1rem;
+        }
+
+        color: $very-dark-magenta;
+        font-weight: $bold;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  &__testimonials {
+
+    @include onDesktop {
+      display: flex;
+      height: 300px;
+
+      .two {
+        margin-top: 1rem;
+      }
+
+      .three {
+        margin-top: 2rem;
+      }
+    }
+    
+
+    &-testimony {
+      background-color: $very-dark-magenta;
+      border-radius: 0.5rem;
+      padding: 2.5rem 2rem;
+      
+      @include onDesktop {
+        margin-right: 1.75rem;
+        height: 235px;
+      }
+
+      @include onMobile {
+        text-align: left;
+        margin-bottom: 1rem;
+      }
+
+      &-header {
+        display: flex;
+        align-items: center;
+        margin-bottom: 1.5rem;
+
+        &_photo {
+          width: 40px;
+          border-radius: 50%;
+          margin-right: 2rem;
+        }
+
+        &_title {
+          font-size: 1rem;
+
+          &-name {
+            color: $light-grayish-magenta;
+            font-weight: $med;
+            margin-bottom: 0.2rem;
+          }
+
+
+          &-description {
+            color: $soft-pink;
+          }
+        }
+      }
+
+      &-body {
+        color: $light-grayish-magenta;
+        font-size: 1rem;
+        line-height: 1.5rem;
+      }
+    }
+
+  }
+
+}
