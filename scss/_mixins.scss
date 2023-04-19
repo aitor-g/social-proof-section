@@ -6,13 +6,13 @@
 }
 
 @mixin onDesktop {
-  @media screen and (min-width: 577px) {
+  @media screen and (min-width: 1300px) {
     @content;
   }
 }
 
 @mixin onMobile {
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 1299px) {
     @content;
   }
 }
